@@ -1,0 +1,10 @@
+{ 
+	"variants": { 
+		"type=deimos_regolite": { "model": "galaxyspace:deimos_regolite"}, 
+		"type=deimos_stone": { "model": "galaxyspace:deimos_stone"},
+		"type=deimos_iron_ore": { "model": "galaxyspace:deimos_iron_ore"},
+		"type=deimos_meteoriciron_ore": { "model": "galaxyspace:deimos_meteoriciron_ore"},
+		"type=deimos_nickel_ore": { "model": "galaxyspace:deimos_nickel_ore"},
+		"type=deimos_desh_ore": { "model": "galaxyspace:deimos_desh_ore"}
+	} 
+}

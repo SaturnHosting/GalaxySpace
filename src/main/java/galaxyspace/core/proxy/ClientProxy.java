@@ -38,6 +38,7 @@ import galaxyspace.systems.SolarSystem.moons.io.renderer.entities.RenderBossGhas
 import galaxyspace.systems.SolarSystem.moons.io.tile.TileEntityTreasureChestIo;
 import galaxyspace.systems.SolarSystem.moons.miranda.blocks.MirandaBlocks;
 import galaxyspace.systems.SolarSystem.moons.phobos.blocks.PhobosBlocks;
+import galaxyspace.systems.SolarSystem.moons.deimos.blocks.DeimosBlocks;
 import galaxyspace.systems.SolarSystem.moons.titan.blocks.TitanBlocks;
 import galaxyspace.systems.SolarSystem.moons.triton.blocks.TritonBlocks;
 import galaxyspace.systems.SolarSystem.planets.ceres.blocks.CeresBlocks;
@@ -388,6 +389,15 @@ public class ClientProxy extends CommonProxy{
 		if(GCCoreUtil.isDeobfuscated())
 			GSUtils.addBlockMetadataJsonFiles(GSBlocks.PHOBOS_BLOCKS, name, PhobosBlocks.BASIC_TYPE.getName(), "");
 
+		name = new String[DeimosBlocks.EnumDeimosBlocks.values().length];
+		for(DeimosBlocks.EnumDeimosBlocks block : DeimosBlocks.EnumDeimosBlocks.values()) {
+			if(block.getName() != null) name[block.getMeta()] = block.getName();
+			ClientUtil.registerBlockJson(GalaxySpace.TEXTURE_PREFIX, GSBlocks.DEIMOS_BLOCKS, block.getMeta(), block.getName());
+		}
+
+		if(GCCoreUtil.isDeobfuscated())
+			GSUtils.addBlockMetadataJsonFiles(GSBlocks.DEIMOS_BLOCKS, name, DeimosBlocks.BASIC_TYPE.getName(), "");
+
 
 		//--------------------------- BLOCKS -----------------------------------
 		ClientUtil.registerBlockJson(GalaxySpace.TEXTURE_PREFIX, GSBlocks.ASSEMBLER);
@@ -561,6 +571,7 @@ public class ClientProxy extends CommonProxy{
 		addVariant("ceresblocks", "", "ceres_grunt", "ceres_subgrunt", "ceres_dolomite_ore", "ceres_meteoriciron_ore", "ceres_dungeon_top", "ceres_dungeon_floor");
 		addVariant("plutoblocks", "", "pluto_grunt_1", "pluto_grunt_2", "pluto_grunt_3", "pluto_grunt_4", "pluto_subgrunt", "pluto_stone");
 		addVariant("phobosblocks", "", "phobos_regolite", "phobos_stone", "phobos_iron_ore", "phobos_meteoriciron_ore", "phobos_nickel_ore", "phobos_desh_ore");
+		addVariant("deimosblocks", "", "deimos_regolite", "deimos_stone", "deimos_iron_ore", "deimos_meteoriciron_ore", "deimos_nickel_ore", "deimos_desh_ore");
 		addVariant("ioblocks", "", "io_grunt", "io_stone", "io_ash", "io_copper_ore", "io_sulfur_ore", "io_volcanic_ore", "io_lava_geyser", "io_sulfur_geyser", "io_top", "io_floor", "io_dungeon_bricks");
 		//addVariant("europablocks", "", "europa_grunt", "europa_stone", "europa_brown_ice", "europa_emerald_ore", "europa_silicon_ore", "europa_aluminum_ore");
 		addVariant("ganymedeblocks", "", "ganymede_grunt", "ganymede_stone", "ganymede_magnesium_ore", "ganymede_titanium_ore");

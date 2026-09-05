@@ -95,6 +95,13 @@ tile.phobos_meteoriciron_ore.name=Meteoric Iron Ore
 tile.phobos_nickel_ore.name=Nickel Ore
 tile.phobos_desh_ore.name=Desh Ore
 
+tile.deimos_regolite.name=Deimos Regolith
+tile.deimos_stone.name=Deimos Stone
+tile.deimos_iron_ore.name=Deimos Iron Ore
+tile.deimos_meteoriciron_ore.name=Deimos Meteoric Iron Ore
+tile.deimos_nickel_ore.name=Deimos Nickel Ore
+tile.deimos_desh_ore.name=Deimos Desh Ore
+
 tile.io_grunt.name=Io Surface Rock
 tile.io_stone.name=Io Stone
 tile.io_ash.name=Io Ash

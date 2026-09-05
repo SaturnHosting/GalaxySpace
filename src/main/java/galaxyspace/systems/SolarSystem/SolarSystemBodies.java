@@ -41,6 +41,8 @@ import galaxyspace.systems.SolarSystem.moons.miranda.dimension.WorldProviderMira
 import galaxyspace.systems.SolarSystem.moons.miranda.recipes.CraftingRecipesMiranda;
 import galaxyspace.systems.SolarSystem.moons.phobos.dimension.WorldProviderPhobos;
 import galaxyspace.systems.SolarSystem.moons.phobos.recipes.CraftingRecipesPhobos;
+import galaxyspace.systems.SolarSystem.moons.deimos.dimension.WorldProviderDeimos;
+import galaxyspace.systems.SolarSystem.moons.deimos.recipes.CraftingRecipesDeimos;
 import galaxyspace.systems.SolarSystem.moons.titan.dimension.TeleportTypeTitan;
 import galaxyspace.systems.SolarSystem.moons.titan.dimension.WorldProviderTitan;
 import galaxyspace.systems.SolarSystem.moons.triton.dimenson.TeleportTypeTriton;
@@ -274,6 +276,13 @@ public class SolarSystemBodies implements IBodies{
 		BodiesRegistry.setProviderData(phobosMars, WorldProviderPhobos.class, GSConfigDimensions.dimensionIDPhobos, 2, ACBiome.ACSpace);
 		BodiesRegistry.setPlanetData(phobosMars, 0F, 12000, 0.066F, true);
 		if(GSConfigDimensions.enablePhobos) GalaxyRegistry.registerMoon(phobosMars);
+
+		deimosMars = BodiesRegistry.registerExMoon(MarsModule.planetMars, "deimos", GalaxySpace.ASSET_PREFIX, 16.0F);
+		BodiesRegistry.setOrbitData(deimosMars, 2.0F, 0.0017F, 250F);
+		BodiesRegistry.setAtmosphere(deimosMars, false, false, false, -1.8F, 0.0F, 0.0F);
+		BodiesRegistry.setProviderData(deimosMars, WorldProviderDeimos.class, GSConfigDimensions.dimensionIDDeimos, 2, ACBiome.ACSpace);
+		BodiesRegistry.setPlanetData(deimosMars, 0F, 30000, 0.025F, true);
+		if(GSConfigDimensions.enableDeimos) GalaxyRegistry.registerMoon(deimosMars);
 
 		if(GSConfigDimensions.enableJupiter) {
 			ioJupiter = BodiesRegistry.registerExMoon(planetJupiter, "io", GalaxySpace.ASSET_PREFIX, 10F);
@@ -558,6 +567,9 @@ public class SolarSystemBodies implements IBodies{
 		data = new BodiesData(TypeBody.MOON);
 		BodiesRegistry.registerBodyData(phobosMars, data);
 
+		data = new BodiesData(TypeBody.MOON);
+		BodiesRegistry.registerBodyData(deimosMars, data);
+
 		if(GSConfigCore.enableUnreachable) {
 			BodiesData unreachableData = new BodiesData(TypeBody.MOON);
 			BodiesRegistry.registerBodyData(oberonUranus, unreachableData);
@@ -595,7 +607,7 @@ public class SolarSystemBodies implements IBodies{
 		//if(GalaxySpace.debug) GalacticraftRegistry.registerTeleportType(WorldProviderZTest.class, new WorldProviderZTest());
 
 		GalacticraftRegistry.registerTeleportType(WorldProviderPhobos.class, new TeleportTypeBody());
-		//GalacticraftRegistry.registerTeleportType(WorldProviderDeimos.class, new WorldProviderDeimos());
+		GalacticraftRegistry.registerTeleportType(WorldProviderDeimos.class, new TeleportTypeBody());
 
 		GalacticraftRegistry.registerTeleportType(WorldProviderIo.class, new TeleportTypeIo());
 		GalacticraftRegistry.registerTeleportType(WorldProviderEuropa_WE.class, new TeleportTypeEuropa());
@@ -630,10 +642,6 @@ public class SolarSystemBodies implements IBodies{
 
 		if(GSConfigCore.enableUnreachable) {
 
-			//MARS
-			deimosMars = registerDummyMoon("deimos", MarsModule.planetMars,  16.0F);
-			if(deimosMars != null)
-				BodiesRegistry.setOrbitData(deimosMars, 1.0F, 0.0017F, 300F);
 			if(GSConfigDimensions.enableSaturn) {
 				//SATURN MOONS
 				mimasSaturn = registerDummyMoon("mimas", planetSaturn, 10F);
@@ -694,6 +702,7 @@ public class SolarSystemBodies implements IBodies{
 		GSDimensions.PLUTO = WorldUtil.getDimensionTypeById(GSConfigDimensions.dimensionIDPluto);
 
 		GSDimensions.PHOBOS = WorldUtil.getDimensionTypeById(GSConfigDimensions.dimensionIDPhobos);
+		GSDimensions.DEIMOS = WorldUtil.getDimensionTypeById(GSConfigDimensions.dimensionIDDeimos);
 		GSDimensions.IO = WorldUtil.getDimensionTypeById(GSConfigDimensions.dimensionIDIo);
 		GSDimensions.EUROPA = WorldUtil.getDimensionTypeById(GSConfigDimensions.dimensionIDEuropa);
 		GSDimensions.GANYMEDE = WorldUtil.getDimensionTypeById(GSConfigDimensions.dimensionIDGanymede);
@@ -786,6 +795,7 @@ public class SolarSystemBodies implements IBodies{
 		CraftingRecipesMars.loadRecipes();
 		CraftingRecipesHaumea.loadRecipes();
 		CraftingRecipesPhobos.loadRecipes();
+		CraftingRecipesDeimos.loadRecipes();
 		CraftingRecipesIo.loadRecipes();
 		CraftingRecipesEuropa.loadRecipes();
 		CraftingRecipesGanymede.loadRecipes();

@@ -23,6 +23,8 @@ import galaxyspace.systems.SolarSystem.moons.miranda.blocks.MirandaBlocks;
 import galaxyspace.systems.SolarSystem.moons.miranda.items.ItemBlocksMiranda;
 import galaxyspace.systems.SolarSystem.moons.phobos.blocks.PhobosBlocks;
 import galaxyspace.systems.SolarSystem.moons.phobos.items.ItemBlocksPhobos;
+import galaxyspace.systems.SolarSystem.moons.deimos.blocks.DeimosBlocks;
+import galaxyspace.systems.SolarSystem.moons.deimos.items.ItemBlocksDeimos;
 import galaxyspace.systems.SolarSystem.moons.titan.blocks.TitanBlocks;
 import galaxyspace.systems.SolarSystem.moons.titan.items.ItemBlocksTitan;
 import galaxyspace.systems.SolarSystem.moons.triton.blocks.TritonBlocks;
@@ -134,6 +136,7 @@ public class GSBlocks {
 	public static final Block HAUMEA_BLOCKS = new HaumeaBlocks().setHardness(3.0F);
 	
 	public static final Block PHOBOS_BLOCKS = new PhobosBlocks().setHardness(2.0F);
+	public static final Block DEIMOS_BLOCKS = new DeimosBlocks().setHardness(2.0F);
 	public static final Block IO_BLOCKS = new IoBlocks().setHardness(3.0F);
 	
 	public static final Block EUROPA_BLOCKS = new EuropaBlocks().setHardness(3.0F);
@@ -214,6 +217,7 @@ public class GSBlocks {
 		registerBlock(HAUMEA_BLOCKS, ItemBlocksHaumea.class);
 		
 		registerBlock(PHOBOS_BLOCKS, ItemBlocksPhobos.class);
+		registerBlock(DEIMOS_BLOCKS, ItemBlocksDeimos.class);
 		registerBlock(IO_BLOCKS, ItemBlocksIo.class);
 		
 		registerBlock(EUROPA_BLOCKS, ItemBlocksEuropa.class);
@@ -259,6 +263,11 @@ public class GSBlocks {
 		OreDictionary.registerOre("oreMeteroricIron", new ItemStack(PHOBOS_BLOCKS, 1, 3));
 		OreDictionary.registerOre("oreNickel", new ItemStack(PHOBOS_BLOCKS, 1, 4));
 		OreDictionary.registerOre("oreDesh", new ItemStack(PHOBOS_BLOCKS, 1, 5));
+
+		OreDictionary.registerOre("oreIron", new ItemStack(DEIMOS_BLOCKS, 1, 2));
+		OreDictionary.registerOre("oreMeteroricIron", new ItemStack(DEIMOS_BLOCKS, 1, 3));
+		OreDictionary.registerOre("oreNickel", new ItemStack(DEIMOS_BLOCKS, 1, 4));
+		OreDictionary.registerOre("oreDesh", new ItemStack(DEIMOS_BLOCKS, 1, 5));
 
 		OreDictionary.registerOre("oreCopper", new ItemStack(IO_BLOCKS, 1, 3));
 		OreDictionary.registerOre("oreSulfur", new ItemStack(IO_BLOCKS, 1, 4));
