@@ -281,7 +281,7 @@ public class SolarSystemBodies implements IBodies{
 		BodiesRegistry.setOrbitData(deimosMars, 2.0F, 0.0017F, 250F);
 		BodiesRegistry.setAtmosphere(deimosMars, false, false, false, -1.8F, 0.0F, 0.0F);
 		BodiesRegistry.setProviderData(deimosMars, WorldProviderDeimos.class, GSConfigDimensions.dimensionIDDeimos, 2, ACBiome.ACSpace);
-		BodiesRegistry.setPlanetData(deimosMars, 0F, 30000, 0.025F, true);
+		BodiesRegistry.setPlanetData(deimosMars, 0F, 30000, 0.090F, true);
 		if(GSConfigDimensions.enableDeimos) GalaxyRegistry.registerMoon(deimosMars);
 
 		if(GSConfigDimensions.enableJupiter) {
