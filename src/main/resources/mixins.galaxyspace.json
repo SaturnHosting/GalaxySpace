@@ -13,7 +13,8 @@
     "MixinTileEntityMethaneSynthesizer",
     "MixinWorld",
     "MixinWorldProviderAsteroids",
-    "MixinWorldProviderVenus"
+    "MixinWorldProviderVenus",
+    "MixinACPacketSimple"
   ],
   "client": [],
   "server": []
